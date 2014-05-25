@@ -1,21 +1,48 @@
-<div class="large-12 field yellow">
-	<!-- -Header -->
-	<%- include partials/header.ejs %>
+<!doctype html>
+<html class="no-js" lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		
+		<title><%= title || "Hackathon" %></title>
+		
+		<link rel="stylesheet" href="/assets/foundation/css/foundation.css" />
+		<link rel="stylesheet" href="/stylesheets/style-hackathon.css" />
+	</head>
 
-	<div class="clear"></div>
+	<body>
+		<div class="large-12 field yellow">
+			<!-- -Header -->
+			<%- include partials/header.ejs %>
+
+			<div class="clear"></div>
 	
-	<!-- -Menu -->
-	<%- include partials/menu.ejs %>
-</div>
+			<!-- -Menu -->
+			<%- include partials/menu.ejs %>
+		</div>
 
- <!-- Cronograma -->
-<%- include partials/schedule.ejs %>
+		<!-- Cronograma -->
+		<%- include partials/schedule.ejs %>
 
-<!-- Regulamento -->
-<%- include partials/rules.ejs %>
+		<!-- Regulamento -->
+		<%- include partials/rules.ejs %>
+	
+		<!-- Inscricoes -->
+		<%- include partials/registration.ejs %>
 
-<!-- Inscricoes -->
-<%- include partials/registration.ejs %>
+		<!-- Logos -->
+		<%- include partials/partners.ejs %>
 
-<!-- Logos -->
-<%- include partials/partners.ejs %>
+		<footer>
+			Hackathon Feevale 2014 - Realização DAC - Apoio DAD
+		</footer>
+
+		<!-- Confirmação -->
+		<%- include partials/confirmation.ejs %>
+
+		<script type="text/javascript" src="/assets/modernizr/modernizr.js"></script>
+		<script type="text/javascript" src="/assets/jquery/dist/jquery.js"></script>
+		<script type="text/javascript" src="/assets/foundation/js/foundation.js"></script>
+		<script type="text/javascript" src="/javascripts/hackathon.js"></script>
+	</body>
+</html>
