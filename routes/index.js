@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var validator = require("validator");
 var database = require(__dirname + "/../database.js");
 
 /* GET home page. */
@@ -26,6 +27,17 @@ router.post("/register/add", function(req, res) {
 			res.send("200", {success: false, message: field + " is mandatory"});
 			return;
 		}
+	}
+
+	if (!validator.isEmail(register.email)) {
+		res.send("200", {success: false, message: "Email inválido."});
+		return;
+	}
+
+	register.phone = register.phone.replace(new RegExp("[^0-9]", "g"), "");
+	if (register.phone.length < 10) {
+		res.send("200", {success: false, message: "Telefone inválido."});
+		return;	
 	}
 
 	database.do(function(err, db) {
