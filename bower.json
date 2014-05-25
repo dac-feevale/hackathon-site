@@ -1,0 +1,10 @@
+{
+	"name": "hackathon-site",
+	"version": "0.0.1",
+	
+	"dependencies": {
+		"jquery": "~2.1.1",
+		"foundation": "~5.2.2",
+		"modernizr": "~2.8.2"
+	}
+}
