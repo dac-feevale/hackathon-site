@@ -5,7 +5,7 @@ var database = require(__dirname + "/../database.js");
 
 /* GET home page. */
 router.get('/', function(req, res) {
-	res.render('index', { title: 'Teste' });
+	res.render('index');
 });
 
 router.post("/register/add", function(req, res) {
