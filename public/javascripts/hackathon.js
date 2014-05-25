@@ -15,4 +15,18 @@ $(document).ready(function() {
 			scrollTop: $(section).offset().top
 		});
             });
+
+	configureRegistratioForm();
 });
+
+function configureRegistratioForm() {
+	var form = $("#inscricoes");
+	form.submit(function() {
+		return false;
+	});
+
+	form.find("#cpf").mask("999.999.999-99");
+	form.find("#bornDate").mask("99/99/9999");
+	form.find("#feevaleCode").mask("9999999");
+	form.find("#phone").mask("(99) 9999-9999?9");
+}
