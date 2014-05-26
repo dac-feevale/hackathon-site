@@ -1,6 +1,9 @@
 GLOBAL.config = {
+	app: {
+		port: (process.env.PORT || 3000)
+	},
 	mongo: {
-		url: "mongodb://localhost:27017/hackathon"
+		url: (process.env.MONGO_URL || "mongodb://localhost:27017/hackathon")
 	}
 };
 
