@@ -9,8 +9,7 @@ router.get('/', function(req, res) {
 });
 
 router.post("/register/add", function(req, res) {
-	//!req.xhr || 
-	if (!req.body || typeof(req.body) != "object") {
+	if (!req.xhr || !req.body || typeof(req.body) != "object") {
 		console.log("pudim");
 		next(); //404 not found
 		return;
