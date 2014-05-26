@@ -61,9 +61,10 @@ function configureRegistratioForm() {
 
 function configureConfirmRegistrationDialog() {
 	var confirmDialog = $("#confirm-registration");
+	var sucessDialog = $("#registration-sucess");
 	var form = $("#inscricoes form");
 	
-	confirmDialog.on("closed", function() {
+	confirmDialog.add(sucessDialog).on("closed", function() {
 		confirmDialog.find(".loading").hide();
 		confirmDialog.find(".default-button").show();
 	});
@@ -80,7 +81,7 @@ function configureConfirmRegistrationDialog() {
 		setTimeout(function() {
 			$.post("/register/add", form.serialize(), function(response) {
 				if (response.success) {
-					$("#registration-sucess").foundation("reveal", "open");
+					sucessDialog.foundation("reveal", "open");
 					form[0].reset();
 				} else {
 					showRegistrationError(confirmDialog)

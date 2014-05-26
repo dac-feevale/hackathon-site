@@ -1,7 +1,13 @@
 var express = require('express');
 var router = express.Router();
 var validator = require("validator");
-var database = require(__dirname + "/../database.js");
+var ejs = require("ejs");
+var fs = require("fs");
+
+var database = require("../database.js");
+var email = require("../email.js");
+
+var emailTemplate = fs.readFileSync(__dirname + "/../views/email.ejs", "utf8");
 
 /* GET home page. */
 router.get('/', function(req, res) {
@@ -44,6 +50,13 @@ router.post("/register/add", function(req, res) {
 			if (err) {
 				throw err;
 			}
+
+			email.send({
+				from: config.mail.auth.user,
+				to: register.email,
+				subject: "Inscrição Hackathon Feevale",
+				html: ejs.render(emailTemplate)
+			});
 
 			res.send("200", {success: true})
 		});
