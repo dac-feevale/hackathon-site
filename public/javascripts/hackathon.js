@@ -61,6 +61,7 @@ function configureRegistratioForm() {
 
 function configureConfirmRegistrationDialog() {
 	var confirmDialog = $("#confirm-registration");
+	var form = $("#inscricoes form");
 	
 	confirmDialog.on("closed", function() {
 		confirmDialog.find(".loading").hide();
@@ -74,7 +75,9 @@ function configureConfirmRegistrationDialog() {
 	confirmDialog.find("#submit-registration").click(function() {
 		confirmDialog.find(".default-button").fadeOut(function() {
 			confirmDialog.find(".loading").fadeIn();
+		});
 
+		setTimeout(function() {
 			$.post("/register/add", form.serialize(), function(response) {
 				if (response.success) {
 					$("#registration-sucess").foundation("reveal", "open");
@@ -85,7 +88,7 @@ function configureConfirmRegistrationDialog() {
 			}, "json").fail(function() {
 				showRegistrationError(confirmDialog);
 			});
-		});
+		}, 100);
 	});
 }
 
