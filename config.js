@@ -16,6 +16,10 @@ GLOBAL.config = {
 		name: (process.env.BANK_NAME|| "Banco"),
 		agency: (process.env.BANK_AGENCY || "Agência"),
 		account: (process.env.BANK_ACCOUNT || "Conta")
+	},
+	analytics: {
+		id: (process.env.ANALYTICS_ID || null),
+		site: (process.env.ANALYTICS_SITE || null)
 	}
 };
 
