@@ -104,6 +104,11 @@ select:hover{
     padding: 0px;
 }
 
+.top-bar-section li.active:not(.has-form) a:not(.button) {
+    background:#FFFFFF !important;
+    color: #585858 !important;
+}
+
 .contain-to-grid, .top-bar, .top-bar-section a, .top-bar-section{
     background: #585858 !important;
     color: #FFFFFF !important;

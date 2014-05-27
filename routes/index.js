@@ -55,7 +55,7 @@ router.post("/register/add", function(req, res) {
 				from: config.mail.auth.user,
 				to: register.email,
 				subject: "Inscrição Hackathon Feevale",
-				html: ejs.render(emailTemplate)
+				html: ejs.render(emailTemplate, {bank: config.bank})
 			});
 
 			res.send("200", {success: true})

@@ -11,6 +11,11 @@ GLOBAL.config = {
 			user: (process.env.MAIL_USER || "user@gmail.com"),
 			pass: (process.env.MAIL_PASSWORD || "")
 		}
+	},
+	bank: {
+		name: (process.env.BANK_NAME|| "Banco"),
+		agency: (process.env.BANK_AGENCY || "Agência"),
+		account: (process.env.BANK_ACCOUNT || "Conta")
 	}
 };
 
